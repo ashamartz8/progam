@@ -980,71 +980,81 @@
             content: '→';
             color: var(--orange-lt);
         }
-/* Update the layout to focus on the top half */
-.deliv-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center; /* Centering vertically fills the gap better */
-    margin-top: 56px;
-    margin-bottom: 40px;
-}
 
-/* Full Width Pricing Styles */
-.pricing-box {
-    background: var(--black);
-    border-radius: 24px; /* Slightly rounder for high-end feel */
-    padding: 48px;
-    color: white;
-    width: 100%;
-}
+        /* Update the layout to focus on the top half */
+        .deliv-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            /* Centering vertically fills the gap better */
+            margin-top: 56px;
+            margin-bottom: 40px;
+        }
 
-.pricing-content {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr; /* Split into 3 columns: Price, Perks, Button */
-    gap: 40px;
-    align-items: center;
-}
+        /* Full Width Pricing Styles */
+        .pricing-box {
+            background: var(--black);
+            border-radius: 24px;
+            /* Slightly rounder for high-end feel */
+            padding: 48px;
+            color: white;
+            width: 100%;
+        }
 
-.pricing-range {
-    font-family: 'poppins', sans-serif;
-    font-size: 38px; /* Slightly larger for the wide view */
-    font-weight: 800;
-    color: white;
-    line-height: 1.1;
-}
+        .pricing-content {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            /* Split into 3 columns: Price, Perks, Button */
+            gap: 40px;
+            align-items: center;
+        }
 
-.pricing-perks {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+        .pricing-range {
+            font-family: 'poppins', sans-serif;
+            font-size: 38px;
+            /* Slightly larger for the wide view */
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+        }
 
-.pricing-cta {
-    display: flex;
-    justify-content: flex-end;
-}
+        .pricing-perks {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-/* Responsive adjustments */
-@media (max-width: 991px) {
-    .pricing-content {
-        grid-template-columns: 1fr; /* Stack on tablet/mobile */
-        text-align: center;
-        gap: 30px;
-    }
-    .pricing-cta {
-        justify-content: center;
-    }
-    .pricing-perks li {
-        justify-content: center;
-    }
-    .deliv-layout {
-        grid-template-columns: 1fr;
-    }
-}
+        .pricing-cta {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 991px) {
+            .pricing-content {
+                grid-template-columns: 1fr;
+                /* Stack on tablet/mobile */
+                text-align: center;
+                gap: 30px;
+            }
+
+            .pricing-cta {
+                justify-content: center;
+            }
+
+            .pricing-perks li {
+                justify-content: center;
+            }
+
+            .deliv-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* ── WHO ── */
         .who-section {
             background: var(--off-white);
@@ -1823,7 +1833,7 @@
                     <span class="hstat-label">Weeks to delivery</span>
                 </div>
                 <div class="hstat">
-                    <span class="hstat-num"><span class="accent"  >2</span></span>
+                    <span class="hstat-num"><span class="accent">2</span></span>
                     <span class="hstat-label">Slots remaining</span>
                 </div>
                 <div class="hstat">
@@ -1985,84 +1995,85 @@
     </section>
 
     <!-- DELIVERABLES -->
-   <section class="deliverables-section reveal" id="deliverables">
-    <div class="section-inner">
-        <div class="badge-label">What's included</div>
-        <h2 class="section-h">Everything you need,<br><span class="b">nothing you don't.</span></h2>
-        
-        <div class="deliv-layout">
-            <!-- Left: Image -->
-            <div class="deliv-img-block">
-                <div class="deliv-img-main">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80"
-                        alt="Code and product delivery" loading="lazy">
-                </div>
-                <div class="deliv-float">
-                    <span class="deliv-float-num">14</span>
-                    <span class="deliv-float-txt">days post-launch bug support</span>
-                </div>
-            </div>
+    <section class="deliverables-section reveal" id="deliverables">
+        <div class="section-inner">
+            <div class="badge-label">What's included</div>
+            <h2 class="section-h">Everything you need,<br><span class="b">nothing you don't.</span></h2>
 
-            <!-- Right: List -->
-            <ul class="deliv-list">
-                <li class="deliv-item">
-                    <span class="deliv-check">✓</span>
-                    <div>
-                        <div class="deliv-item-title">Fully functional MVP / web app</div>
-                        <div class="deliv-item-sub">Scoped to pilot — production-ready, not prototype</div>
+            <div class="deliv-layout">
+                <!-- Left: Image -->
+                <div class="deliv-img-block">
+                    <div class="deliv-img-main">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80"
+                            alt="Code and product delivery" loading="lazy">
                     </div>
-                </li>
-                <li class="deliv-item">
-                    <span class="deliv-check">✓</span>
-                    <div>
-                        <div class="deliv-item-title">Source code & all assets</div>
-                        <div class="deliv-item-sub">100% ownership, zero caveats</div>
+                    <div class="deliv-float">
+                        <span class="deliv-float-num">14</span>
+                        <span class="deliv-float-txt">days post-launch bug support</span>
                     </div>
-                </li>
-                <li class="deliv-item">
-                    <span class="deliv-check">✓</span>
-                    <div>
-                        <div class="deliv-item-title">Strategy & handoff session</div>
-                        <div class="deliv-item-sub">1-hour walkthrough with our lead engineer</div>
-                    </div>
-                </li>
-                <li class="deliv-item">
-                    <span class="deliv-check">✓</span>
-                    <div>
-                        <div class="deliv-item-title">Documentation & deployment guide</div>
-                        <div class="deliv-item-sub">Full docs so your team can maintain and extend it</div>
-                    </div>
-                </li>
-                <li class="deliv-item">
-                    <span class="deliv-check">✓</span>
-                    <div>
-                        <div class="deliv-item-title">14-day post-launch bug support</div>
-                        <div class="deliv-item-sub">We're not gone after handoff</div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Full Width Pricing Box -->
-        <div class="pricing-box">
-            <div class="pricing-content">
-                <div>
-                    <span class="pricing-tag">Investment</span>
-                    <div class="pricing-range">$3,800 – $7,200</div>
-                    <div class="pricing-note">Fixed-cap quote after scoping call. No surprises.</div>
                 </div>
-                <ul class="pricing-perks">
-                    <li>Firm capped quote — price locked after SOW</li>
-                    <li>Extend contract or purchase outright</li>
-                    <li>50% refund if we miss delivery</li>
+
+                <!-- Right: List -->
+                <ul class="deliv-list">
+                    <li class="deliv-item">
+                        <span class="deliv-check">✓</span>
+                        <div>
+                            <div class="deliv-item-title">Fully functional MVP / web app</div>
+                            <div class="deliv-item-sub">Scoped to pilot — production-ready, not prototype</div>
+                        </div>
+                    </li>
+                    <li class="deliv-item">
+                        <span class="deliv-check">✓</span>
+                        <div>
+                            <div class="deliv-item-title">Source code & all assets</div>
+                            <div class="deliv-item-sub">100% ownership, zero caveats</div>
+                        </div>
+                    </li>
+                    <li class="deliv-item">
+                        <span class="deliv-check">✓</span>
+                        <div>
+                            <div class="deliv-item-title">Strategy & handoff session</div>
+                            <div class="deliv-item-sub">1-hour walkthrough with our lead engineer</div>
+                        </div>
+                    </li>
+                    <li class="deliv-item">
+                        <span class="deliv-check">✓</span>
+                        <div>
+                            <div class="deliv-item-title">Documentation & deployment guide</div>
+                            <div class="deliv-item-sub">Full docs so your team can maintain and extend it</div>
+                        </div>
+                    </li>
+                    <li class="deliv-item">
+                        <span class="deliv-check">✓</span>
+                        <div>
+                            <div class="deliv-item-title">14-day post-launch bug support</div>
+                            <div class="deliv-item-sub">We're not gone after handoff</div>
+                        </div>
+                    </li>
                 </ul>
-                <div class="pricing-cta">
-                    <a href="#apply" class="btn-orange" style="width:100%; justify-content:center; border-radius:8px;">Get Your Scoped Quote →</a>
+            </div>
+
+            <!-- Full Width Pricing Box -->
+            <div class="pricing-box">
+                <div class="pricing-content">
+                    <div>
+                        <span class="pricing-tag">Investment</span>
+                        <div class="pricing-range">$3,800 – $7,200</div>
+                        <div class="pricing-note">Fixed-cap quote after scoping call. No surprises.</div>
+                    </div>
+                    <ul class="pricing-perks">
+                        <li>Firm capped quote — price locked after SOW</li>
+                        <li>Extend contract or purchase outright</li>
+                        <li>50% refund if we miss delivery</li>
+                    </ul>
+                    <div class="pricing-cta">
+                        <a href="#apply" class="btn-orange"
+                            style="width:100%; justify-content:center; border-radius:8px;">Get Your Scoped Quote →</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- WHO -->
     <section class="who-section reveal" id="who">
