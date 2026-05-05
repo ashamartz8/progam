@@ -70,41 +70,17 @@
             height: 58px;
         }
 
+
         .nav-logo {
             display: flex;
             align-items: center;
-            gap: 10px;
-            text-decoration: none;
         }
 
-        .nav-logo-icon {
-            width: 36px;
-            height: 36px;
-            background: var(--orange);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'poppins', sans-serif;
-            font-weight: 800;
-            font-size: 20px;
-            color: white;
-        }
-
-        .nav-logo-text {
-            font-family: 'poppins', sans-serif;
-            font-weight: 700;
-            font-size: 15px;
-            color: white;
-        }
-
-        .nav-logo-text span {
-            display: block;
-            font-size: 10px;
-            font-weight: 400;
-            color: var(--gray-400);
-            letter-spacing: 0.06em;
-            margin-top: -2px;
+        .nav-logo-img {
+            height: 35px;
+            /* adjust as needed */
+            width: auto;
+            object-fit: contain;
         }
 
         .nav-links {
@@ -1793,8 +1769,9 @@
     <!-- NAV -->
     <nav id="mainnav">
         <a href="#" class="nav-logo">
-            <div class="nav-logo-icon">A</div>
-            <div class="nav-logo-text">Ayfiz Infotech <span>Solutions</span></div>
+            <div class="nav-logo">
+                <img src="logo.png" alt="Ayfiz Infotech Solutions" class="nav-logo-img">
+            </div>
         </a>
         <ul class="nav-links">
             <li><a href="#solution">How it works</a></li>
@@ -1938,7 +1915,7 @@
                     <h2 class="section-h">Execution first.<br><span class="o">Commitment follows.</span></h2>
                 </div>
                 <p class="solution-intro">A one-time engagement to prove execution - not promise it.
-                We deliver a fully scoped, production-ready solution in 4 weeks.
+                    We deliver a fully scoped, production-ready solution in 4 weeks.
                     You keep the results. No obligations. No lock-in.
                     Continue if it delivers value - or walk away. Entirely your call.</p>
             </div>
@@ -2062,8 +2039,8 @@
                 </ul>
             </div>
 
-            
-         
+
+
         </div>
     </section>
 
