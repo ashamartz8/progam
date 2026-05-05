@@ -1,0 +1,2336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilot Engagement Program — Ayfiz Infotech Solutions</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --blue: #1048A4;
+            --blue-mid: #1a5cd4;
+            --blue-lt: #2e7dff;
+            --blue-pale: #e8f0ff;
+            --orange: #F26B1D;
+            --orange-lt: #ff8c3e;
+            --orange-dk: #c4540e;
+            --black: #0a0a0a;
+            --white: #ffffff;
+            --off-white: #f7f8fc;
+            --gray-100: #f0f2f8;
+            --gray-200: #e2e6f0;
+            --gray-400: #9ea8c0;
+            --gray-600: #5a6480;
+            --gray-800: #2c3250;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--white);
+            color: var(--black);
+            overflow-x: hidden;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 60px;
+            height: 70px;
+            background: rgba(10, 10, 10, 0.96);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            transition: height 0.3s;
+        }
+
+        nav.scrolled {
+            height: 58px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--orange);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'poppins', sans-serif;
+            font-weight: 800;
+            font-size: 20px;
+            color: white;
+        }
+
+        .nav-logo-text {
+            font-family: 'poppins', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            color: white;
+        }
+
+        .nav-logo-text span {
+            display: block;
+            font-size: 10px;
+            font-weight: 400;
+            color: var(--gray-400);
+            letter-spacing: 0.06em;
+            margin-top: -2px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--gray-400);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .nav-cta {
+            background: var(--orange) !important;
+            color: white !important;
+            padding: 9px 22px;
+            border-radius: 6px;
+            font-size: 12px !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.04em;
+        }
+
+        .nav-cta:hover {
+            background: var(--orange-lt) !important;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            background: var(--black);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            padding: 120px 60px 80px;
+            gap: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(16, 72, 164, 0.25) 0%, transparent 65%);
+            top: -200px;
+            right: -100px;
+            pointer-events: none;
+        }
+
+        .hero-glow-2 {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(242, 107, 29, 0.12) 0%, transparent 65%);
+            bottom: -100px;
+            left: 100px;
+            pointer-events: none;
+        }
+
+        .hero-left {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(242, 107, 29, 0.12);
+            border: 1px solid rgba(242, 107, 29, 0.25);
+            border-radius: 100px;
+            padding: 6px 16px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--orange-lt);
+            letter-spacing: 0.04em;
+            margin-bottom: 28px;
+            animation: fadeUp 0.5s ease both;
+        }
+
+        .pill-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--orange-lt);
+            animation: blink 2s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: 0.3
+            }
+        }
+
+        .hero h1 {
+            font-family: 'poppins', sans-serif;
+            font-weight: 800;
+            font-size: clamp(44px, 5.5vw, 72px);
+            line-height: 1.05;
+            color: white;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            animation: fadeUp 0.6s ease 0.1s both;
+        }
+
+        .hero h1 .highlight {
+            color: var(--orange);
+        }
+
+        .hero h1 .blue-text {
+            color: var(--blue-lt);
+        }
+
+        .hero-desc {
+            font-size: 17px;
+            color: #8a94aa;
+            line-height: 1.75;
+            max-width: 480px;
+            margin-bottom: 40px;
+            animation: fadeUp 0.6s ease 0.2s both;
+        }
+
+        .hero-btns {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            animation: fadeUp 0.6s ease 0.3s both;
+            flex-wrap: wrap;
+        }
+
+        .btn-orange {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--orange);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+            letter-spacing: 0.02em;
+        }
+
+        .btn-orange:hover {
+            background: var(--orange-lt);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 16px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .btn-outline:hover {
+            border-color: rgba(255, 255, 255, 0.35);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 0;
+            margin-top: 56px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 32px;
+            animation: fadeUp 0.6s ease 0.4s both;
+        }
+
+        .hstat {
+            flex: 1;
+            padding-right: 32px;
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            margin-right: 32px;
+        }
+
+        .hstat:last-child {
+            border-right: none;
+            margin-right: 0;
+            padding-right: 0;
+        }
+
+        .hstat-num {
+            font-family: 'poppins', sans-serif;
+            font-size: 36px;
+            font-weight: 800;
+            color: white;
+            line-height: 1;
+            display: block;
+        }
+
+        .hstat-num .accent {
+            color: var(--orange);
+        }
+
+        .hstat-label {
+            font-size: 12px;
+            color: #6a7490;
+            letter-spacing: 0.04em;
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* HERO RIGHT — visual */
+        .hero-right {
+            position: relative;
+            z-index: 1;
+            animation: fadeUp 0.7s ease 0.2s both;
+        }
+
+        .hero-visual-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hvc-top {
+            background: var(--blue);
+            padding: 28px 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hvc-top::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 50%;
+            top: -80px;
+            right: -60px;
+        }
+
+        .hvc-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 8px;
+        }
+
+        .hvc-title {
+            font-family: 'poppins', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hvc-img-wrap {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hvc-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.85) saturate(1.1);
+        }
+
+        .hvc-img-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 40%, rgba(10, 10, 10, 0.6) 100%);
+        }
+
+        .hvc-body {
+            padding: 24px 32px;
+        }
+
+        .hvc-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .hvc-step {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .hvc-step-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+            font-weight: 700;
+            color: white;
+            font-family: 'poppins', sans-serif;
+        }
+
+        .hvc-step-text {
+            font-size: 13px;
+            color: #8a94aa;
+            flex: 1;
+        }
+
+        .hvc-step-text strong {
+            display: block;
+            color: white;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 1px;
+        }
+
+        .hvc-step-badge {
+            font-size: 10px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 100px;
+            letter-spacing: 0.06em;
+            white-space: nowrap;
+        }
+
+        .badge-done {
+            background: rgba(16, 164, 100, 0.15);
+            color: #4ade80;
+        }
+
+        .badge-live {
+            background: rgba(242, 107, 29, 0.15);
+            color: var(--orange-lt);
+        }
+
+        .badge-next {
+            background: rgba(255, 255, 255, 0.08);
+            color: #6a7490;
+        }
+
+        /* ── SECTION CORE ── */
+        section {
+            padding: 96px 60px;
+        }
+
+        .section-inner {
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+
+        .badge-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 16px;
+        }
+
+        .badge-label::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 2px;
+            background: var(--orange);
+            border-radius: 2px;
+        }
+
+        .section-h {
+            font-family: 'poppins', sans-serif;
+            font-size: clamp(32px, 4vw, 52px);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+
+        .section-h .o {
+            color: var(--orange);
+        }
+
+        .section-h .b {
+            color: var(--blue);
+        }
+
+        /* ── PROBLEM ── */
+        .problem-section {
+            background: var(--black);
+            color: white;
+        }
+
+        .problem-section .badge-label {
+            color: #ff8c3e;
+        }
+
+        .problem-section .badge-label::before {
+            background: #ff8c3e;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-top: 56px;
+        }
+
+        .problem-img-side {
+            position: relative;
+        }
+
+        .prob-img-main {
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 4/3;
+        }
+
+        .prob-img-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.7) saturate(0.9);
+        }
+
+        .prob-img-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(16, 72, 164, 0.5) 0%, rgba(10, 10, 10, 0.4) 100%);
+            border-radius: 16px;
+        }
+
+        .prob-img-stat {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            background: var(--orange);
+            border-radius: 10px;
+            padding: 14px 20px;
+            color: white;
+        }
+
+        .prob-img-stat-num {
+            font-family: 'poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            display: block;
+            line-height: 1;
+        }
+
+        .prob-img-stat-lbl {
+            font-size: 11px;
+            font-weight: 500;
+            opacity: 0.85;
+        }
+
+        .prob-img-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            padding: 10px 16px;
+            font-size: 12px;
+            font-weight: 500;
+            color: white;
+        }
+
+        .problem-text {}
+
+        .problem-body {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #8a94aa;
+            margin-bottom: 32px;
+        }
+
+        .problem-body p+p {
+            margin-top: 16px;
+        }
+
+        .problem-close {
+            font-family: 'poppins', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 32px;
+        }
+
+        .pain-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .pain-card {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 10px;
+            font-size: 14px;
+            color: #8a94aa;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .pain-card:hover {
+            border-color: rgba(242, 107, 29, 0.25);
+            background: rgba(242, 107, 29, 0.04);
+        }
+
+        .pain-num {
+            font-family: 'poppins', sans-serif;
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--orange-lt);
+            background: rgba(242, 107, 29, 0.12);
+            border-radius: 6px;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* ── SOLUTION ── */
+        .solution-section {
+            background: var(--off-white);
+        }
+
+        .solution-head {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: end;
+            margin-bottom: 64px;
+        }
+
+        .solution-intro {
+            font-size: 17px;
+            color: var(--gray-600);
+            line-height: 1.75;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .step-card {
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+
+        .step-card:hover {
+            box-shadow: 0 20px 60px rgba(16, 72, 164, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .step-card-top {
+            height: 8px;
+        }
+
+        .step-card-top.s1 {
+            background: var(--blue);
+        }
+
+        .step-card-top.s2 {
+            background: var(--orange);
+        }
+
+        .step-card-top.s3 {
+            background: var(--black);
+        }
+
+        .step-card-body {
+            padding: 28px;
+        }
+
+        .step-week {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            margin-bottom: 8px;
+        }
+
+        .step-num {
+            font-family: 'poppins', sans-serif;
+            font-size: 52px;
+            font-weight: 800;
+            color: var(--gray-100);
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .step-title {
+            font-family: 'poppins', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 10px;
+        }
+
+        .step-desc {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        .step-img-wrap {
+            margin: 20px 28px 28px;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 140px;
+        }
+
+        .step-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .timeline-strip {
+            margin-top: 40px;
+            background: var(--blue);
+            border-radius: 12px;
+            padding: 24px 36px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .ts-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.75);
+            font-weight: 500;
+        }
+
+        .ts-item::before {
+            content: '✓';
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            color: white;
+        }
+
+        /* ── DELIVERABLES ── */
+        .deliverables-section {
+            background: white;
+        }
+
+        .deliv-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+            margin-top: 56px;
+        }
+
+        .deliv-img-block {
+            position: relative;
+        }
+
+        .deliv-img-main {
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+
+        .deliv-img-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .deliv-float {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--orange);
+            border-radius: 12px;
+            padding: 20px 24px;
+            color: white;
+            min-width: 160px;
+            box-shadow: 0 16px 40px rgba(242, 107, 29, 0.3);
+        }
+
+        .deliv-float-num {
+            font-family: 'poppins', sans-serif;
+            font-size: 36px;
+            font-weight: 800;
+            display: block;
+            line-height: 1;
+        }
+
+        .deliv-float-txt {
+            font-size: 12px;
+            font-weight: 500;
+            opacity: 0.85;
+        }
+
+        .deliv-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .deliv-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .deliv-item:last-child {
+            border-bottom: none;
+        }
+
+        .deliv-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            background: var(--blue-pale);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: var(--blue);
+            flex-shrink: 0;
+            margin-top: 1px;
+            font-weight: 700;
+        }
+
+        .deliv-item-title {
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--black);
+            margin-bottom: 3px;
+        }
+
+        .deliv-item-sub {
+            font-size: 13px;
+            color: var(--gray-600);
+        }
+
+        .pricing-box {
+            background: var(--black);
+            border-radius: 16px;
+            padding: 36px;
+            color: white;
+            margin-top: 40px;
+        }
+
+        .pricing-tag {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--orange-lt);
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .pricing-range {
+            font-family: 'poppins', sans-serif;
+            font-size: 44px;
+            font-weight: 800;
+            color: white;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .pricing-note {
+            font-size: 12px;
+            color: #6a7490;
+            margin-bottom: 28px;
+        }
+
+        .pricing-perks {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+
+        .pricing-perks li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #8a94aa;
+        }
+
+        .pricing-perks li::before {
+            content: '→';
+            color: var(--orange-lt);
+        }
+/* Update the layout to focus on the top half */
+.deliv-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center; /* Centering vertically fills the gap better */
+    margin-top: 56px;
+    margin-bottom: 40px;
+}
+
+/* Full Width Pricing Styles */
+.pricing-box {
+    background: var(--black);
+    border-radius: 24px; /* Slightly rounder for high-end feel */
+    padding: 48px;
+    color: white;
+    width: 100%;
+}
+
+.pricing-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr; /* Split into 3 columns: Price, Perks, Button */
+    gap: 40px;
+    align-items: center;
+}
+
+.pricing-range {
+    font-family: 'poppins', sans-serif;
+    font-size: 38px; /* Slightly larger for the wide view */
+    font-weight: 800;
+    color: white;
+    line-height: 1.1;
+}
+
+.pricing-perks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pricing-cta {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .pricing-content {
+        grid-template-columns: 1fr; /* Stack on tablet/mobile */
+        text-align: center;
+        gap: 30px;
+    }
+    .pricing-cta {
+        justify-content: center;
+    }
+    .pricing-perks li {
+        justify-content: center;
+    }
+    .deliv-layout {
+        grid-template-columns: 1fr;
+    }
+}
+        /* ── WHO ── */
+        .who-section {
+            background: var(--off-white);
+        }
+
+        .who-img-row {
+            margin-bottom: 56px;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 280px;
+            position: relative;
+        }
+
+        .who-img-row img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .who-img-row::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(16, 72, 164, 0.85) 0%, rgba(16, 72, 164, 0.3) 50%, transparent 100%);
+        }
+
+        .who-img-text {
+            position: absolute;
+            left: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            color: white;
+        }
+
+        .who-img-text h3 {
+            font-family: 'poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .who-img-text p {
+            font-size: 15px;
+            opacity: 0.8;
+            max-width: 360px;
+        }
+
+        .who-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .who-card {
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 36px;
+        }
+
+        .who-card.not {
+            background: transparent;
+            border-style: dashed;
+        }
+
+        .who-card-head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .who-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .who-icon.yes {
+            background: var(--blue);
+        }
+
+        .who-icon.no {
+            background: var(--gray-400);
+        }
+
+        .who-card-head h3 {
+            font-family: 'poppins', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .who-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .who-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+
+        .who-list li::before {
+            content: attr(data-icon);
+            flex-shrink: 0;
+        }
+
+        /* ── PROOF ── */
+        .proof-section {
+            background: white;
+        }
+
+        .logos-wrap {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            padding: 24px 0;
+            border-top: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--gray-200);
+            margin-bottom: 64px;
+        }
+
+        .logos-wrap .lbl {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            margin-right: 4px;
+        }
+
+        .logo-pill {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--gray-600);
+            padding: 7px 18px;
+            border: 1px solid var(--gray-200);
+            border-radius: 6px;
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 48px;
+            align-items: start;
+        }
+
+        .proof-img-block {
+            position: relative;
+        }
+
+        .proof-img-main {
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 16/10;
+        }
+
+        .proof-img-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .testimonials-col {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .testimonial {
+            background: var(--gray-100);
+            border-radius: 12px;
+            padding: 24px;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-family: 'poppins', sans-serif;
+            font-size: 64px;
+            color: rgba(16, 72, 164, 0.12);
+            position: absolute;
+            top: 4px;
+            left: 18px;
+            line-height: 1;
+        }
+
+        .testi-text {
+            font-size: 14px;
+            line-height: 1.75;
+            color: var(--gray-800);
+            margin-bottom: 16px;
+            padding-top: 14px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testi-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .testi-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--blue);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .testi-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--black);
+            display: block;
+        }
+
+        .testi-role {
+            font-size: 12px;
+            color: var(--gray-400);
+        }
+
+        .stats-bar {
+            background: var(--black);
+            border-radius: 16px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background-clip: padding-box;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-bar::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(16, 72, 164, 0.3) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .stat-block {
+            text-align: center;
+            padding: 20px 32px;
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-block:last-child {
+            border-right: none;
+        }
+
+        .stat-num {
+            font-family: 'poppins', sans-serif;
+            font-size: 44px;
+            font-weight: 800;
+            color: white;
+            display: block;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .stat-num .o {
+            color: var(--orange);
+        }
+
+        .stat-lbl {
+            font-size: 12px;
+            color: #6a7490;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .stat-sub {
+            font-size: 13px;
+            color: #8a94aa;
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* ── FAQ ── */
+        .faq-section {
+            background: var(--black);
+        }
+
+        .faq-section .section-h {
+            color: white;
+        }
+
+        .faq-section .badge-label {
+            color: var(--orange-lt);
+        }
+
+        .faq-section .badge-label::before {
+            background: var(--orange-lt);
+        }
+
+        .faq-wrap {
+            max-width: 720px;
+            margin: 56px auto 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .faq-btn {
+            width: 100%;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 24px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: white;
+            text-align: left;
+            transition: color 0.2s;
+        }
+
+        .faq-btn:hover {
+            color: var(--orange-lt);
+        }
+
+        .faq-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #6a7490;
+            flex-shrink: 0;
+            transition: all 0.2s;
+            line-height: 1;
+        }
+
+        .faq-item.open .faq-icon {
+            background: var(--orange);
+            border-color: var(--orange);
+            color: white;
+            transform: rotate(45deg);
+        }
+
+        .faq-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.35s ease;
+        }
+
+        .faq-item.open .faq-body {
+            max-height: 250px;
+            padding-bottom: 24px;
+        }
+
+        .faq-body p {
+            font-size: 15px;
+            color: #8a94aa;
+            line-height: 1.75;
+        }
+
+        /* ── FINAL CTA ── */
+        .cta-section {
+            background: var(--blue);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.04);
+            top: -400px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.15);
+            bottom: -300px;
+            right: -100px;
+        }
+
+        .cta-section .badge-label {
+            color: rgba(255, 255, 255, 0.7);
+            justify-content: center;
+        }
+
+        .cta-section .badge-label::before {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .cta-section .section-h {
+            color: white;
+        }
+
+        .cta-sub {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 520px;
+            margin: 0 auto 48px;
+            line-height: 1.7;
+        }
+
+        .cta-form {
+            max-width: 420px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-input {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 15px 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            color: white;
+            outline: none;
+            transition: border-color 0.2s, background 0.2s;
+            width: 100%;
+        }
+
+        .cta-input::placeholder {
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        .cta-input:focus {
+            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .cta-submit {
+            background: var(--orange);
+            color: white;
+            border: none;
+            padding: 17px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .cta-submit:hover {
+            background: var(--orange-lt);
+            transform: translateY(-2px);
+        }
+
+        .cta-note {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 0.04em;
+            margin-top: 6px;
+        }
+
+        .cta-deadline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.75);
+            font-weight: 500;
+            margin-top: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .dl-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--orange-lt);
+            animation: blink 1.5s infinite;
+        }
+
+        .cta-book {
+            display: block;
+            margin-top: 20px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.45);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-book:hover {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: #060606;
+            padding: 40px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 24px;
+            border-top: 1px solid #111;
+        }
+
+        .ft-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ft-logo-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--orange);
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'poppins', sans-serif;
+            font-weight: 800;
+            font-size: 17px;
+            color: white;
+        }
+
+        .ft-logo-name {
+            font-family: 'poppins', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .ft-tagline {
+            font-size: 12px;
+            color: #333;
+            font-style: italic;
+        }
+
+        .ft-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .ft-links a {
+            font-size: 11px;
+            color: #333;
+            text-decoration: none;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        .ft-links a:hover {
+            color: var(--orange-lt);
+        }
+
+        .ft-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .ft-soc {
+            width: 32px;
+            height: 32px;
+            border: 1px solid #1a1a1a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-size: 12px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .ft-soc:hover {
+            border-color: var(--orange);
+            color: var(--orange-lt);
+        }
+
+        .ft-copy {
+            font-size: 10px;
+            color: #2a2a2a;
+            letter-spacing: 0.04em;
+        }
+
+        /* ── UTILS ── */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: none;
+        }
+
+        @media (max-width: 900px) {
+            nav {
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 64px 20px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 100px 20px 60px;
+            }
+
+            .hero-right {
+                display: none;
+            }
+
+            .problem-grid,
+            .solution-head,
+            .deliv-layout,
+            .who-grid,
+            .proof-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-bar {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-block {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            }
+
+            .stat-block:last-child {
+                border-bottom: none;
+            }
+
+            footer {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 32px 20px;
+            }
+
+            .deliv-float {
+                right: 0;
+                bottom: -16px;
+            }
+
+            .who-img-row {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav id="mainnav">
+        <a href="#" class="nav-logo">
+            <div class="nav-logo-icon">A</div>
+            <div class="nav-logo-text">Ayfiz Infotech <span>Solutions</span></div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#solution">How it works</a></li>
+            <li><a href="#deliverables">What's included</a></li>
+            <li><a href="#proof">Results</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#apply" class="nav-cta">Apply Now →</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+        <div class="hero-grid-bg"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-glow-2"></div>
+
+        <div class="hero-left">
+            <div class="hero-pill">
+                <span class="pill-dot"></span>
+                Pilot Engagement Program — Q3 2026
+            </div>
+            <h1>
+                Test us before<br>you <span class="highlight">trust</span> us.
+            </h1>
+            <p class="hero-desc">
+                We prove ourselves through <em>work</em>, not proposals. A scoped, production-ready project delivered in
+                4 weeks — you keep it regardless. No contracts, no pressure, no lock-in.
+            </p>
+            <div class="hero-btns">
+                <a href="#apply" class="btn-orange">Apply Now →</a>
+                <a href="#solution" class="btn-outline">How it works ↓</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hstat">
+                    <span class="hstat-num"><span class="accent">4</span></span>
+                    <span class="hstat-label">Weeks to delivery</span>
+                </div>
+                <div class="hstat">
+                    <span class="hstat-num"><span class="accent">2</span></span>
+                    <span class="hstat-label">Slots remaining</span>
+                </div>
+                <div class="hstat">
+                    <span class="hstat-num"><span class="accent">0</span></span>
+                    <span class="hstat-label">Lock-in obligations</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <div class="hero-visual-card">
+                <div class="hvc-top">
+                    <div class="hvc-label">Active Pilot — Q3 2026</div>
+                    <div class="hvc-title">Analytics Dashboard</div>
+                </div>
+                <div class="hvc-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80"
+                        alt="Analytics dashboard in development" loading="lazy">
+                </div>
+                <div class="hvc-body">
+                    <div class="hvc-steps">
+                        <div class="hvc-step">
+                            <div class="hvc-step-icon" style="background:var(--blue)">1</div>
+                            <div class="hvc-step-text"><strong>Discovery & Scoping</strong>SOW signed, metrics aligned
+                            </div>
+                            <span class="hvc-step-badge badge-done">Done</span>
+                        </div>
+                        <div class="hvc-step">
+                            <div class="hvc-step-icon" style="background:var(--orange)">2</div>
+                            <div class="hvc-step-text"><strong>Build & Iterate</strong>Week 3 — weekly demos running
+                            </div>
+                            <span class="hvc-step-badge badge-live">Live</span>
+                        </div>
+                        <div class="hvc-step">
+                            <div class="hvc-step-icon" style="background:#3a3a3a">3</div>
+                            <div class="hvc-step-text"><strong>Delivery & Handoff</strong>Final QA + source code</div>
+                            <span class="hvc-step-badge badge-next">Week 4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section class="problem-section" id="problem">
+        <div class="section-inner">
+            <div class="badge-label">The old way</div>
+            <h2 class="section-h" style="color:white;">Tired of paying for <span class="o">promises</span> that don't
+                ship?</h2>
+            <div class="problem-grid">
+                <div class="problem-img-side">
+                    <div class="prob-img-main">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80"
+                            alt="Corporate meeting with proposals" loading="lazy">
+                        <div class="prob-img-overlay"></div>
+                    </div>
+                    <div class="prob-img-stat">
+                        <span class="prob-img-stat-num">68%</span>
+                        <span class="prob-img-stat-lbl">of agency projects miss deadline</span>
+                    </div>
+                    <div class="prob-img-badge">Slide decks ≠ delivery</div>
+                </div>
+                <div class="problem-text">
+                    <div class="problem-body">
+                        <p>You've wasted months reviewing slide decks, negotiating retainers, and still don't know if
+                            the vendor can actually execute. Vague SOWs, missed deadlines, zero accountability.</p>
+                        <p>You're not buying code — you're buying promises. And promises don't ship features.</p>
+                    </div>
+                    <p class="problem-close">We flipped the model.</p>
+                    <div class="pain-cards">
+                        <div class="pain-card">
+                            <span class="pain-num">01</span>
+                            Months of proposals with zero working output
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">02</span>
+                            Vague SOWs, no clear success metrics
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">03</span>
+                            Long retainers before a single deliverable
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">04</span>
+                            IP locked inside vendor systems
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section class="solution-section reveal" id="solution">
+        <div class="section-inner">
+            <div class="solution-head">
+                <div>
+                    <div class="badge-label">The Pilot Engagement Program</div>
+                    <h2 class="section-h">Work first.<br><span class="o">Commitment later.</span></h2>
+                </div>
+                <p class="solution-intro">A one-time initiative: we build a scoped, production-ready project in 4 weeks.
+                    You keep the results — no strings attached. Extend or walk away, entirely your call.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-card-top s1"></div>
+                    <div class="step-card-body">
+                        <div class="step-week">Week 1</div>
+                        <div class="step-num">01</div>
+                        <div class="step-title">Discovery & Scoping</div>
+                        <p class="step-desc">We align on deliverables, success metrics, and tech specs. A signed SOW
+                            before a single line of code is written.</p>
+                    </div>
+                    <div class="step-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80"
+                            alt="Team scoping session" loading="lazy">
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-card-top s2"></div>
+                    <div class="step-card-body">
+                        <div class="step-week">Weeks 2–3</div>
+                        <div class="step-num">02</div>
+                        <div class="step-title">Build & Iterate</div>
+                        <p class="step-desc">Two weeks of agile development. Weekly live demos, daily async updates.
+                            Real progress — not status reports about status reports.</p>
+                    </div>
+                    <div class="step-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80"
+                            alt="Developer coding" loading="lazy">
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-card-top s3"></div>
+                    <div class="step-card-body">
+                        <div class="step-week">Week 4</div>
+                        <div class="step-num">03</div>
+                        <div class="step-title">Delivery & Review</div>
+                        <p class="step-desc">Final QA, handoff, and full documentation. You own the product outright.
+                            Extend with us — or keep what you have.</p>
+                    </div>
+                    <div class="step-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=600&q=80"
+                            alt="Product handoff and launch" loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-strip">
+                <div class="ts-item">4-week fixed timeline</div>
+                <div class="ts-item">Capped fixed price</div>
+                <div class="ts-item">No hidden fees</div>
+                <div class="ts-item">100% IP ownership on delivery</div>
+                <div class="ts-item">Zero vendor lock-in</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DELIVERABLES -->
+   <section class="deliverables-section reveal" id="deliverables">
+    <div class="section-inner">
+        <div class="badge-label">What's included</div>
+        <h2 class="section-h">Everything you need,<br><span class="b">nothing you don't.</span></h2>
+        
+        <div class="deliv-layout">
+            <!-- Left: Image -->
+            <div class="deliv-img-block">
+                <div class="deliv-img-main">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80"
+                        alt="Code and product delivery" loading="lazy">
+                </div>
+                <div class="deliv-float">
+                    <span class="deliv-float-num">14</span>
+                    <span class="deliv-float-txt">days post-launch bug support</span>
+                </div>
+            </div>
+
+            <!-- Right: List -->
+            <ul class="deliv-list">
+                <li class="deliv-item">
+                    <span class="deliv-check">✓</span>
+                    <div>
+                        <div class="deliv-item-title">Fully functional MVP / web app</div>
+                        <div class="deliv-item-sub">Scoped to pilot — production-ready, not prototype</div>
+                    </div>
+                </li>
+                <li class="deliv-item">
+                    <span class="deliv-check">✓</span>
+                    <div>
+                        <div class="deliv-item-title">Source code & all assets</div>
+                        <div class="deliv-item-sub">100% ownership, zero caveats</div>
+                    </div>
+                </li>
+                <li class="deliv-item">
+                    <span class="deliv-check">✓</span>
+                    <div>
+                        <div class="deliv-item-title">Strategy & handoff session</div>
+                        <div class="deliv-item-sub">1-hour walkthrough with our lead engineer</div>
+                    </div>
+                </li>
+                <li class="deliv-item">
+                    <span class="deliv-check">✓</span>
+                    <div>
+                        <div class="deliv-item-title">Documentation & deployment guide</div>
+                        <div class="deliv-item-sub">Full docs so your team can maintain and extend it</div>
+                    </div>
+                </li>
+                <li class="deliv-item">
+                    <span class="deliv-check">✓</span>
+                    <div>
+                        <div class="deliv-item-title">14-day post-launch bug support</div>
+                        <div class="deliv-item-sub">We're not gone after handoff</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Full Width Pricing Box -->
+        <div class="pricing-box">
+            <div class="pricing-content">
+                <div>
+                    <span class="pricing-tag">Investment</span>
+                    <div class="pricing-range">$3,800 – $7,200</div>
+                    <div class="pricing-note">Fixed-cap quote after scoping call. No surprises.</div>
+                </div>
+                <ul class="pricing-perks">
+                    <li>Firm capped quote — price locked after SOW</li>
+                    <li>Extend contract or purchase outright</li>
+                    <li>50% refund if we miss delivery</li>
+                </ul>
+                <div class="pricing-cta">
+                    <a href="#apply" class="btn-orange" style="width:100%; justify-content:center; border-radius:8px;">Get Your Scoped Quote →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- WHO -->
+    <section class="who-section reveal" id="who">
+        <div class="section-inner">
+            <div class="badge-label">Fit check</div>
+            <h2 class="section-h">Built for <span class="o">decision-makers.</span></h2>
+
+            <div class="who-img-row">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80"
+                    alt="Corporate team in modern office" loading="lazy">
+                <div class="who-img-text">
+                    <h3>Corporate-grade execution,<br>startup-speed delivery.</h3>
+                    <p>We work with innovation leads, CTOs, and product managers who value output over optics.</p>
+                </div>
+            </div>
+
+            <div class="who-grid">
+                <div class="who-card">
+                    <div class="who-card-head">
+                        <span class="who-icon yes">✓</span>
+                        <h3>This is for you if…</h3>
+                    </div>
+                    <ul class="who-list">
+                        <li data-icon="→">Corporate innovation leads & product managers seeking validated execution</li>
+                        <li data-icon="→">Startup founders & CTOs who need risk-free technical validation</li>
+                        <li data-icon="→">Marketing directors needing custom tools or internal dashboards</li>
+                        <li data-icon="→">Mid-size companies tired of agency overhead and broken promises</li>
+                    </ul>
+                </div>
+                <div class="who-card not">
+                    <div class="who-card-head">
+                        <span class="who-icon no">✗</span>
+                        <h3>Not the right fit if…</h3>
+                    </div>
+                    <ul class="who-list">
+                        <li data-icon="✗">You're an agency looking for white-label partnerships</li>
+                        <li data-icon="✗">You plan to reopen scope after signing the SOW</li>
+                        <li data-icon="✗">Your budget is under $3,800 — we focus on serious pilots</li>
+                        <li data-icon="✗">You want to micromanage without decision authority</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROOF -->
+    <section class="proof-section reveal" id="proof">
+        <div class="section-inner">
+            <div class="badge-label">Social proof</div>
+            <h2 class="section-h">Clients who tested us<br><span class="o">stayed with us.</span></h2>
+
+            <div class="logos-wrap">
+                <span class="lbl">Trusted by</span>
+                <span class="logo-pill">Fintech Ventures</span>
+                <span class="logo-pill">Logix Supply</span>
+                <span class="logo-pill">HealthCore AI</span>
+                <span class="logo-pill">Scaleup Group</span>
+            </div>
+
+            <div class="proof-grid">
+                <div class="proof-img-block">
+                    <div class="proof-img-main">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80"
+                            alt="Happy client team reviewing delivered project" loading="lazy">
+                    </div>
+                </div>
+                <div class="testimonials-col">
+                    <div class="testimonial">
+                        <p class="testi-text">"The Pilot Program delivered a fully functional analytics dashboard in 4
+                            weeks. We hired them for the year. Game changer — we had no idea a vendor test could
+                            actually produce this level of output."</p>
+                        <div class="testi-author">
+                            <div class="testi-avatar">RM</div>
+                            <div>
+                                <span class="testi-name">Riya Mehta</span>
+                                <span class="testi-role">CPO, FinScale</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testi-text">"No proposal BS. They built our internal tool, handed over the code, and
+                            didn't force a contract. Refreshing honesty you rarely find in this space."</p>
+                        <div class="testi-author">
+                            <div class="testi-avatar" style="background:var(--orange)">MT</div>
+                            <div>
+                                <span class="testi-name">Marcus T.</span>
+                                <span class="testi-role">Operations Director</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testi-text">"32% faster lead intake after deployment. One of the smartest vendor tests
+                            we've ever run. The ROI was clear within the first week post-launch."</p>
+                        <div class="testi-author">
+                            <div class="testi-avatar" style="background:var(--gray-800)">SJ</div>
+                            <div>
+                                <span class="testi-name">Sarah J.</span>
+                                <span class="testi-role">Head of Innovation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-bar">
+                <div class="stat-block">
+                    <span class="stat-num"><span class="o">18h</span></span>
+                    <span class="stat-lbl">Saved weekly</span>
+                    <span class="stat-sub">Manual reporting eliminated</span>
+                </div>
+                <div class="stat-block">
+                    <span class="stat-num"><span class="o">$45k</span></span>
+                    <span class="stat-lbl">Annualized savings</span>
+                    <span class="stat-sub">In staff time alone</span>
+                </div>
+                <div class="stat-block">
+                    <span class="stat-num"><span class="o">32%</span></span>
+                    <span class="stat-lbl">Faster lead intake</span>
+                    <span class="stat-sub">Post-deployment result</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section reveal" id="faq">
+        <div class="section-inner">
+            <div class="badge-label">FAQ</div>
+            <h2 class="section-h" style="text-align:center; margin-bottom: 0;">Your questions, <span
+                    class="o">answered.</span></h2>
+            <div class="faq-wrap">
+                <div class="faq-item">
+                    <button class="faq-btn">What happens if I don't continue after 4 weeks? <span
+                            class="faq-icon">+</span></button>
+                    <div class="faq-body">
+                        <p>You still own the completed project at the fixed pilot price — no further obligation. The
+                            code, designs, and full IP rights are yours to keep, deploy, and modify as you see fit.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-btn">How is scope protected? <span class="faq-icon">+</span></button>
+                    <div class="faq-body">
+                        <p>Before kickoff we sign a clear SOW that defines exactly what will be delivered. Any change
+                            requests beyond scope are priced separately and explicitly agreed upon — pilot work stays
+                            focused, always.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-btn">Do you work with startups or early-stage companies? <span
+                            class="faq-icon">+</span></button>
+                    <div class="faq-body">
+                        <p>Yes, if the product has clear ROI. The Pilot Engagement Program welcomes both corporate
+                            innovation teams and funded startups — as long as there's a scoped problem to solve and a
+                            decision-maker at the table.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-btn">What tech stack do you use? <span class="faq-icon">+</span></button>
+                    <div class="faq-body">
+                        <p>React, Node.js, Python, and modern production-grade stacks. We match your preferred stack if
+                            you have one, or recommend future-proof options during the scoping week based on your
+                            project's specific needs.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-btn">What if the pilot fails to deliver? <span class="faq-icon">+</span></button>
+                    <div class="faq-body">
+                        <p>We take delivery seriously. In the unlikely event of failure on our end, we either refund 50%
+                            of the pilot fee or extend the timeline at no cost — your choice.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-btn">How many slots remain right now? <span class="faq-icon">+</span></button>
+                    <div class="faq-body">
+                        <p>Maximum 4 clients per cohort. Currently 2 slots are filled — only 2 remain for Q3. Once all 4
+                            are filled, the program closes completely until the next cohort opens.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="cta-section" id="apply">
+        <div class="section-inner" style="position:relative;z-index:1;">
+            <div class="badge-label">Ready to prove before you commit?</div>
+            <h2 class="section-h" style="margin-bottom:16px;">Only <span style="color:var(--orange-lt)">2 slots</span>
+                left.</h2>
+            <p class="cta-sub">Apply now and receive a scoped project proposal within 24 hours. Once all 4 slots are
+                filled, the program closes — no exceptions.</p>
+
+            <div class="cta-form">
+                <input type="text" class="cta-input" placeholder="Full name">
+                <input type="email" class="cta-input" placeholder="Work email">
+                <button class="cta-submit" onclick="handleCTA(this)">Send Pilot Request →</button>
+                <p class="cta-note">Response within 6 hours · No spam · No sales pressure</p>
+            </div>
+
+            <div class="cta-deadline">
+                <span class="dl-dot"></span>
+                Enrollment closes May 20, 2026 — or when slots are filled
+            </div>
+            <a href="#" class="cta-book">Prefer a call? Book 15 minutes →</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="ft-logo">
+            <div class="ft-logo-icon">A</div>
+            <div>
+                <div class="ft-logo-name">Ayfiz Infotech Solutions</div>
+                <div class="ft-tagline">Earned trust, delivered code.</div>
+            </div>
+        </div>
+        <ul class="ft-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Pilot</a></li>
+            <li><a href="#apply">Apply Now</a></li>
+        </ul>
+        <div class="ft-social">
+            <a href="#" class="ft-soc">𝕏</a>
+            <a href="#" class="ft-soc">in</a>
+            <a href="#" class="ft-soc">⊹</a>
+        </div>
+        <div class="ft-copy">© 2026 Ayfiz Infotech Solutions — "Test us before you trust us."</div>
+    </footer>
+
+    <script>
+        // Nav scroll
+        const nav = document.getElementById('mainnav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // Reveal
+        const revealEls = document.querySelectorAll('.reveal');
+        const ro = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
+        }, { threshold: 0.1 });
+        revealEls.forEach(el => ro.observe(el));
+
+        // FAQ
+        document.querySelectorAll('.faq-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const open = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!open) item.classList.add('open');
+            });
+        });
+
+        // Form
+        function handleCTA(btn) {
+            const form = btn.closest('.cta-form');
+            const name = form.querySelector('input[type="text"]').value.trim();
+            const email = form.querySelector('input[type="email"]').value.trim();
+            if (!name || !email) {
+                btn.textContent = 'Please fill both fields';
+                btn.style.background = '#555';
+                setTimeout(() => { btn.textContent = 'Send Pilot Request →'; btn.style.background = ''; }, 2500);
+                return;
+            }
+            btn.textContent = '✓ Request Sent — Expect a reply within 6h';
+            btn.style.background = '#2e7a4e';
+            btn.disabled = true;
+        }
+    </script>
+</body>
+
+</html>
