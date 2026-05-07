@@ -1070,7 +1070,7 @@
 
         .who-img-text h3 {
             font-family: 'poppins', sans-serif;
-             font-size: clamp(18px, 4vw, 28px);
+            font-size: clamp(18px, 4vw, 28px);
             font-weight: 800;
             margin-bottom: 6px;
         }
@@ -1839,7 +1839,7 @@
                             <span class="hvc-step-badge badge-done">Done</span>
                         </div>
                         <div class="hvc-step">
-                            <div class="hvc-step-icon" style="background:#F26B1D">2</div>
+                            <div class="hvc-step-icon" style="background:var(--blue)">2</div>
                             <div class="hvc-step-text"><strong>Build & Iterate</strong>Week 3 — weekly demos running
                             </div>
                             <span class="hvc-step-badge badge-live">Live</span>
@@ -1913,10 +1913,10 @@
                     <div class="badge-label">The Pilot Engagement Program</div>
                     <h2 class="section-h">Execution first.<br><span class="o">Commitment follows.</span></h2>
                 </div>
-                <p class="solution-intro">A one-time engagement to prove execution - not promise it.
-                    We deliver a fully scoped, production-ready solution in 4 weeks.
-                    You keep the results. No obligations. No lock-in.
-                    Continue if it delivers value - or walk away. Entirely your call.</p>
+                <p class="solution-intro">A one-time engagement to prove execution - not promise it. We deliver a fully
+                    scoped, production-ready solution in 4 weeks. You keep the results. No obligations. No lock-in.
+                    Continue if it delivers valueContinue if it delivers value or conclude the engagement entirely on
+                    your terms.</p>
             </div>
 
             <div class="steps-grid">
@@ -2145,15 +2145,18 @@
                     <button class="faq-btn">What happens if I don't continue after 4 weeks? <span
                             class="faq-icon">+</span></button>
                     <div class="faq-body">
-                        <p>You retain full ownership of the completed project at the fixed pilot price - no further obligations.
-All code, designs, and intellectual property are fully transferred to you, ready to deploy, adapt, and scale as you see fit.</p>
+                        <p>You retain full ownership of the completed project at the fixed pilot price - no further
+                            obligations.
+                            All code, designs, and intellectual property are fully transferred to you, ready to deploy,
+                            adapt, and scale as you see fit.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-btn">How is scope protected? <span class="faq-icon">+</span></button>
                     <div class="faq-body">
                         <p>Before kickoff, a clear SOW defines exactly what will be delivered.
- Any scope changes are separately priced and explicitly approved - ensuring the pilot remains focused, without deviation.</p>
+                             Any scope changes are separately priced and explicitly approved - ensuring the pilot
+                            remains focused, without deviation.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -2161,14 +2164,16 @@ All code, designs, and intellectual property are fully transferred to you, ready
                             class="faq-icon">+</span></button>
                     <div class="faq-body">
                         <p>Yes - where a clear ROI is evident.
- The Pilot Engagement Program works with corporate innovation teams and funded startups that bring a well-defined problem and a decision-maker to the table.</p>
+                             The Pilot Engagement Program works with corporate innovation teams and funded startups that
+                            bring a well-defined problem and a decision-maker to the table.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-btn">What tech stack do you use? <span class="faq-icon">+</span></button>
                     <div class="faq-body">
                         <p>We build using modern, production-grade technologies including React, Node.js, and Python.
- We align with your preferred stack - or define a scalable, future-ready architecture during the scoping phase, tailored to your project’s needs.</p>
+                             We align with your preferred stack - or define a scalable, future-ready architecture during
+                            the scoping phase, tailored to your project’s needs.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -2182,8 +2187,8 @@ All code, designs, and intellectual property are fully transferred to you, ready
                     <button class="faq-btn">How many slots remain right now? <span class="faq-icon">+</span></button>
                     <div class="faq-body">
                         <p>We limit each cohort to four clients to ensure focused execution.
- Two engagements are already confirmed - only two slots remain for Q3.
-Once filled, the program closes until the next cohort.</p>
+                             Two engagements are already confirmed - only two slots remain for Q3.
+                            Once filled, the program closes until the next cohort.</p>
                     </div>
                 </div>
             </div>
@@ -2202,6 +2207,10 @@ Once filled, the program closes until the next cohort.</p>
             <div class="cta-form">
                 <input type="text" class="cta-input" placeholder="Full name">
                 <input type="email" class="cta-input" placeholder="Work email">
+                <input type="tel" class="cta-input" placeholder="Contact number">
+
+                <!-- Requirements -->
+                <textarea class="cta-input" placeholder="Share your requirements" rows="4"></textarea>
                 <button class="cta-submit" onclick="handleCTA(this)">Send Pilot Request →</button>
                 <p class="cta-note">Response within 6 hours · No spam · No sales pressure</p>
             </div>
